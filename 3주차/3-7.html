@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textContent 예제</title>
+</head>
+<body>
+    <div id="content">Hello, World!</div>
+    <button id="changeContent">Change Content</button>
+
+    <script>
+        document.getElementById('changeContent').addEventListener('click', function() {
+            document.getElementById('content').textContent = 'New Text Content';
+        });
+    </script>
+</body>
+</html>

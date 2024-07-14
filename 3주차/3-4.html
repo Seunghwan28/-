@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 계산기</title>
+    <link rel="stylesheet" href="3-4.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>간단한 계산기</h1>
+        <input type="number" id="num1" placeholder="첫 번째 숫자">
+        <input type="number" id="num2" placeholder="두 번째 숫자">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <button onclick="calculate()">계산</button>
+        <div id="result"></div>
+    </div>
+    <script src="3-4.js"></script>
+</body>
+</html>

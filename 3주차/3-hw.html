@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기 게임</title>
+    <link rel="stylesheet" href="3-hw.css">
+</head>
+<body>
+    <div class="container">
+        <h1>끝말잇기 게임</h1>
+        <input type="text" id="wordInput" placeholder="단어를 입력하세요">
+        <div class="button-container">
+            <button id="submitButton">제출</button>
+            <button id="resetButton">초기화</button>
+        </div>
+        <div class="word-container">
+            <ul id="wordList"></ul>
+        </div>
+        <p id="warningMessage" class="hidden">단어가 끝말잇기 규칙에 맞지 않습니다!</p>
+    </div>
+    <script src="3-hw.js"></script>
+</body>
+</html>

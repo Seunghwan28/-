@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bg-dark text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4">My Blog</h1>
+      <p class="lead">Welcome to my personal blog</p>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Blog</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#posts">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div id="post-list" class="row">
+      <main class="col-md-8">
+        <section id="home" class="mb-5">
+          <h2>Recent Posts</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header">Post 1</div>
+                <div class="card-body">
+                  <p class="card-text">Published on January 1, 2024</p>
+                  <p class="card-text">Summary of post 1...</p>
+                  <a href="index.html?post=1" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header">Post 2</div>
+                <div class="card-body">
+                  <p class="card-text">Published on February 1, 2024</p>
+                  <p class="card-text">Summary of post 2...</p>
+                  <a href="index.html?post=2" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header">Post 3</div>
+                <div class="card-body">
+                  <p class="card-text">Published on March 1, 2024</p>
+                  <p class="card-text">Summary of post 3...</p>
+                  <a href="index.html?post=3" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="col-md-4 bg-light full-height">
+        <section id="about" class="mb-5">
+          <h2>About Me</h2>
+          <p>Additional information about the blog author.</p>
+        </section>
+      </aside>
+    </div>
+    <div id="post-content" class="d-none">
+      <main class="col-12">
+        <section id="post" class="mb-5">
+          <h2 id="post-title"></h2>
+          <p id="post-date"></p>
+          <p id="post-body"></p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p>&copy; 2024 My Blog. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const posts = {
+      1: {
+        title: 'Post 1',
+        date: 'Published on January 1, 2024',
+        body: 'This is the full content of post 1...'
+      },
+      2: {
+        title: 'Post 2',
+        date: 'Published on February 1, 2024',
+        body: 'This is the full content of post 2...'
+      },
+      3: {
+        title: 'Post 3',
+        date: 'Published on March 1, 2024',
+        body: 'This is the full content of post 3...'
+      }
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('post');
+
+    if (postId && posts[postId]) {
+      document.getElementById('post-list').classList.add('d-none');
+      document.getElementById('post-content').classList.remove('d-none');
+      document.getElementById('post-title').textContent = posts[postId].title;
+      document.getElementById('post-date').textContent = posts[postId].date;
+      document.getElementById('post-body').textContent = posts[postId].body;
+    }
+  </script>
+</body>
+</html>

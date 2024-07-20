@@ -2,15 +2,15 @@ import React from 'react';
 import PersonalCard from './PersonalCard';
 
 const user = {
-  name: '이승환',
-  age: 23,
+  name: 'John Doe',
+  age: 30,
   job: 'Software Engineer'
 };
 
 const App = () => {
   return (
     <div style={styles.container}>
-      <PersonalCard name={user.name} age={user.age} job={user.job} />
+      <PersonalCard initialName={user.name} initialAge={user.age} initialJob={user.job} />
     </div>
   );
 };
